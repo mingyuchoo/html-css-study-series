@@ -43,16 +43,25 @@ a:visited {
   text-decoration: none;
 }
 
-
 .flex-container {
-  align-items: center;
   display: flex;
+  flex-flow: row wrap;
+  /* == /*
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  */
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .flex-item {
+  order: 0;
+  flex: 0 1 auto;
+  /* == /*
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  */
   background-color:#b084f4;
   padding: 10px 50px;
 }
@@ -60,9 +69,10 @@ a:visited {
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
+    width: 100%;
   }
   .flex-item {
-    flex: 100%;
+    flex: 1 0 auto;
     width: 100%;
   }
 }
